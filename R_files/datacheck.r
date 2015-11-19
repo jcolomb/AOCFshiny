@@ -17,6 +17,7 @@ if(testing){
   Firstlinedata ="Interval summary"
   lastlinedata ="Sum"
 }
+
 Dirname=list.dirs(path = filepath,recursive = F, full.names=F)
 animalID1= "Animal name:"
 animalID2= "Animal No.:"

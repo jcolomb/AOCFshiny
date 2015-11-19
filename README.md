@@ -6,7 +6,7 @@ This shiny app can only run locally (based on shiny files package).
  
 Please install R and run the command:
 
-    shiny::runGitHub('AOCFshiny/shy_dataqualitycheck', 'jcolomb') 
+    shiny::runGitHub('Viewer-file-concatenator', 'jcolomb') 
 
 You need to have the shiny package called.
 Need to test if you need other packages to be installed.
