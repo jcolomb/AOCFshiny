@@ -1,8 +1,0 @@
-name: shiny
-account: aocf
-server: shinyapps.io
-bundleId: 314068
-url: https://aocf.shinyapps.io/shiny
-when: 1447931839.99736
-asMultiple: FALSE
-asStatic: FALSE
