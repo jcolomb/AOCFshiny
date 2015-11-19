@@ -5,6 +5,7 @@ Tested with single animal data only, will be soon tested for plugins derived dat
 This shiny app can only run locally (based on shiny files package).
  
 Please install R and run the command:
+
     shiny::runGitHub('AOCFshiny/shy_dataqualitycheck', 'jcolomb') 
 
 You need to have the shiny package called.
