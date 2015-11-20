@@ -7,28 +7,37 @@ library(shinyFiles)
 
 shinyUI(
   fluidPage(
-    shinyDirButton('directory', 'Folder select', 'Please select a folder'),
+    tags$h2("Viewer3-concatenator and data quality check", align = "center"),
     
-    #dataTableOutput('directorypath'),
-    textInput("necessary_text", label = ("text that must be in the file"), 
-              value = "animal"),
-    textInput("notpresent_text", label = ("text that must not be in the file"), 
-              value = ""),
+    tags$p(shinyDirButton('directory', 'Push to select the data folder on your computer, the programm can access data in subfolders.', 'Please select a folder'), align= "center"),
+
+    tags$hr(),
+    tags$p("In the two boxes here, try to select only the file you are interested in", align= "center"), 
     
     radioButtons("datatype", 
                  label = ("type of file to upload (only xls working at this time)"),
-                          choices=c(".xls file" = ".xls")),
-    verbatimTextOutput('directorypath'),
-    "<c>
-indicate here information about the data structure.
+                 choices=c(".xls file" = ".xls")),    
+    #dataTableOutput('directorypath'),
+    tags$div(
+      textInput("necessary_text", label = ("text that must be in the file"), 
+              value = "animal") ,
+      textInput("notpresent_text", label = ("text that must not be in the file"), 
+              value = "")
+    ),
     
-    </c>",
+    
+    verbatimTextOutput('directorypath'),
+    tags$hr(),
+    tags$p("indicate here information about the data structure. Refer to the data seen below (first xls file read).", align= "center"),
     textInput("lastlinedata", label = ("Give the text of the first column of the last data line"), 
               value = "Sum"),
     textInput("Firstlinedata", label = ("Give the text of the first column of the first of the two headers lines"), 
               value = "Interval summary"),
-    downloadButton('downloadData', 'Concatenate files and download result table'),
-    downloadButton('datacheckdwn', 'Test data quality and download result'),
+tags$hr(),
+tags$p("Choose your outputs: result of the data check or concatenate the data. Concatenation may not work if there are errors in the data check.", align= "center"),
+  downloadButton('datacheckdwn', 'Test data quality and download result'),
+  downloadButton('downloadData', 'Concatenate files and download result table'),
+    
     
 #     fileInput("file1",
 #               "Choose CSV files from directory",

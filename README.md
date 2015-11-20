@@ -11,19 +11,21 @@ This works only with .xls export at the moment, but could be easily modified to 
 
 Install
 =======
+To run the program, you first need to install one program (R) and some "packages". R is programming language, working similarly to the windows console.
 
-You need to install R on your computer: https://cran.r-project.org/
 
-On the R console, copy and paste this code:
+In order to install R on your computer, follow the instructions here: https://cran.r-project.org/
+
+Open the R application and copy and paste this code:
 
     install.packages(c("shiny","dplyr","readxl","shinyFiles"))
 
 Run
 ===
 
-Please install R and run the command:
+Open the R application and copy and paste this code:
 
     library(shiny)
     shiny::runGitHub('Viewer-file-concatenator', 'jcolomb') 
 
-This app will be copied on your computer and run locally. Since it is based on shinyFiles, it must be run on the computer which can read the data files.
+your browser should start, running the application. The app utilisation should be quite self-explanatory.

@@ -15,6 +15,7 @@ shinyServer(function(input, output, session) {
     filepath
     #bla="animal"
     
+    
     })
   
   filenames <- reactive({
