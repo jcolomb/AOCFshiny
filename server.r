@@ -54,6 +54,7 @@ shinyServer(function(input, output, session) {
   dataInput <- reactive({
     Firstlinedata =input$Firstlinedata
     lastlinedata =input$lastlinedata
+    animalID1= input$col_animalID1
     filepath= fileInput()
     
     Filesname= filechoosen()
@@ -111,7 +112,7 @@ shinyServer(function(input, output, session) {
            paste("test", ".csv", sep='') 
          },
          content = function(file) {
-           write.csv(dataInput(), file)
+           write.csv(dataInput(), file, dec= ".")
          },
          contentType = "text/csv"
        )

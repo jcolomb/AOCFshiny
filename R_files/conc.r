@@ -1,6 +1,26 @@
 ##concantenator
-#Firstlinedata ="Interval summary"
-#lastlinedata ="Sum"
+testing=F
+if(testing){
+  filepath="datafortest/20150710_Rosenmund_VGlut1-KO_MWM_-1d/"
+  Filesname=list.files(path = filepath, pattern = NULL, all.files = FALSE,
+                       full.names = FALSE, recursive = TRUE,
+                       ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+  
+  
+  Filesname
+  substrRight <- function(x, n){
+    substr(x, nchar(x)-n+1, nchar(x))
+  }
+  Filesname = Filesname["xls" == substrRight(Filesname, 3) ]
+  Filesname = Filesname[!grepl("all",Filesname)]
+  #length(Filesname)
+  Filesname = Filesname[grepl("animal",Filesname)]
+  Firstlinedata ="Interval summary"
+  lastlinedata ="Sum"
+  animalID1= "Animal name:"
+  animalID2= "Animal No.:"
+  animalID1= "Animal No.:"
+}
 
 alldata=c()
 
@@ -49,7 +69,7 @@ for(i in c(1:length(Filesname))){
     data2= data.frame(data)
     data2$`Experiment_Time`=format(data2$`Experiment_Time`, format="%H:%M:%S")
   }else{
-    data2= cbind(addcolumns,data.frame("animalID"=rep(animal_ID,(Ldata)) ),data)[-(Ldata-1),]
+    data2= cbind(addcolumns,data)[-(Ldata-1),]
     # add data to the sum row (date-time)
     data2[(Ldata-1),]= ifelse(is.na(data2[(Ldata-1),]), data2[(Ldata-2),],data2[(Ldata-1),])
     data2$`Interval summary_Time`=format(data2$`Interval summary_Time`, format="%H:%M:%S")
