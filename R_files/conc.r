@@ -28,7 +28,7 @@ for(i in c(1:length(Filesname))){
   
   
   #get animal ID, excluding the part after "." if it was entered as a number
-  animal_ID=gsub("\\..*","",as.character(readxl::read_excel(filename, sheet = 1, col_names =FALSE)[7,3]))
+  #animal_ID=gsub("\\..*","",as.character(readxl::read_excel(filename, sheet = 1, col_names =FALSE)[7,3]))
   
   #get only the data, read again to get date format correctly
   #data=readxl::read_excel(filename, sheet = 1, skip=(Dstart+1), col_names =FALSE)[1:Ldata,]
@@ -88,3 +88,5 @@ for(i in c(1:length(Filesname))){
 }
 
 concdata=alldata[rowSums(is.na(alldata)) < length(alldata), ]
+#getting an animalID column
+names(concdata)[names(concdata)==gsub("\\:*","",animalID1)] = "animalID"
