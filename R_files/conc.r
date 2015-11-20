@@ -87,4 +87,4 @@ for(i in c(1:length(Filesname))){
   
 }
 
-concdata=alldata
+concdata=alldata[rowSums(is.na(alldata)) < length(alldata), ]
