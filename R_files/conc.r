@@ -90,3 +90,5 @@ for(i in c(1:length(Filesname))){
 concdata=alldata[rowSums(is.na(alldata)) < length(alldata), ]
 #getting an animalID column
 names(concdata)[names(concdata)==gsub("\\:*","",animalID1)] = "animalID"
+# making column names usable
+concdata=data.frame(concdata)
