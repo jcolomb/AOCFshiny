@@ -63,6 +63,10 @@ shinyServer(function(input, output, session) {
   })
   
   datacheck <- reactive({
+    
+      
+    animalID1= input$col_animalID1
+    animalID2= input$col_animalID2
     Firstlinedata =input$Firstlinedata
     lastlinedata =input$lastlinedata
     filepath= fileInput()

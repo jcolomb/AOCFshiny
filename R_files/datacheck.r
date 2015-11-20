@@ -16,13 +16,17 @@ if(testing){
   Filesname = Filesname[grepl("animal",Filesname)]
   Firstlinedata ="Interval summary"
   lastlinedata ="Sum"
+  animalID1= "Animal name:"
+  animalID2= "Animal No.:"
+  animalID1= "Animal No.:"
 }
 
 Dirname=list.dirs(path = filepath,recursive = F, full.names=F)
-animalID1= "Animal name:"
-animalID2= "Animal No.:"
+
 
 ## testing that the number of files is correct.
+
+## TODO modify for other element than test (and training) in folder name
 
 path2=paste0(Dirname[grepl("test" ,Dirname)],"/")
 Filesname2= Filesname[grepl(path2 ,Filesname)]
@@ -37,7 +41,7 @@ if (!isTRUE(Nanimals %%1==0)){
     Filesname3= Filesname[grepl(path3 ,Filesname)]
     Ntraining=length(Filesname3)/ Nanimals
     if (!isTRUE(Ntraining %%1==0)){
-      print(paste0("the number of files in the folder ",path3, " is not correct."))
+      print(paste0("the number of files in the folder ",path3, " may be incorrect, it this is a training folder."))
     }
     if (isTRUE(exists("overnt") && Ntraining != overnt )){
       print("the number of training between training directories (=directories wich name do not countain <test>) is inconsistent. Did you not forget to export some files? 
