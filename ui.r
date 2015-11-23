@@ -8,10 +8,11 @@ library(shinyFiles)
 shinyUI(
   fluidPage(
     tags$h2("Viewer3-concatenator and data quality check", align = "center"),
-    
+    tags$h4("For feedback (problems, feature request and thank-you message) please use ",tags$a(href="https://github.com/jcolomb/Viewer-file-concatenator/issues","the github issue tracker.")),
+    tags$hr(),
     tags$p(shinyDirButton('directory', 'Push to select the data folder on your computer, the programm can access data in subfolders.', 'Please select a folder'), align= "center"),
 
-    tags$hr(),
+    #tags$hr(),
     tags$p("In the two boxes here, try to select only the file you are interested in", align= "center"), 
     
     radioButtons("datatype", 
