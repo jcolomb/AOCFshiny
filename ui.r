@@ -6,7 +6,8 @@ library(shinyFiles)
 shinyUI(bootstrapPage(
   
   
-  headerPanel(p("Viewer3-concatenator and data quality check", align = "center")
+  titlePanel(p("Working with viewer3 data:from excel export to statistical analysis", align = "center"),
+              windowTitle = "Viewer3 data analysis"
   ),
   
   sidebarPanel(
