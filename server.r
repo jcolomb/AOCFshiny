@@ -4,6 +4,11 @@ library(readxl)
 library(shinyFiles)
 
 shinyServer(function(input, output, session) {
+  q <- observe({
+    # Stop the app when the quit button is clicked
+    if (input$quit == 1) stopApp()
+  })
+  
   volumes <- getVolumes() #c('R Installation'=R.home())
  # shinyFileChoose(input, 'file', roots=volumes, session=session, restrictions=system.file(package='base'))
   shinyDirChoose(input, 'directory', roots=volumes, session=session, restrictions=system.file(package='base'))

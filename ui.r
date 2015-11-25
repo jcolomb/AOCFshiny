@@ -3,14 +3,31 @@
 
 library(shiny)
 library(shinyFiles)
-
-
-shinyUI(
-  fluidPage(
-    tags$h2("Viewer3-concatenator and data quality check", align = "center"),
-    tags$h4("For feedback (problems, feature request and thank-you message) please use ",tags$a(href="https://github.com/jcolomb/Viewer-file-concatenator/issues","the github issue tracker.")),
-    tags$hr(),
-    tags$p(shinyDirButton('directory', 'Push to select the data folder on your computer, the programm can access data in subfolders.', 'Please select a folder'), align= "center"),
+shinyUI(bootstrapPage(
+  
+  
+  headerPanel(p("Viewer3-concatenator and data quality check", align = "center")
+  ),
+  
+  sidebarPanel(
+    
+    #$helpText("Click here to update your results, you need to do this after you change the data, model, or setting"),
+    #ubmitButton("Update View"),
+    #br(),
+    #helpText("Press Quit to exit the application"),
+    
+    tags$h4("For feedback (problems, feature request and thank-you message) please use ",tags$a(href="https://github.com/jcolomb/Viewer-file-concatenator/issues","the github issue tracker."))
+    ,actionButton("quit", "Quit app")
+    , width = 3),
+  
+  mainPanel(
+    tabsetPanel(
+      tabPanel("Concatenator",
+      tags$h2("Viewer3-concatenator and data quality check", align = "center"),
+      tags$hr(),
+      
+    
+     tags$p(shinyDirButton('directory', 'Push to select the data folder on your computer, the programm can access data in subfolders.', 'Please select a folder'), align= "center"),
 
     #tags$hr(),
     tags$p("In the two boxes here, try to select only the file you are interested in", align= "center"), 
@@ -55,4 +72,11 @@ tags$p("Choose your outputs: result of the data check or concatenate the data. C
      dataTableOutput("testtable"),
 #dataTableOutput("resulttable")
      textOutput("datachecks")
-  ))
+  ),
+tabPanel("analysis",
+            tags$p("testing")
+)#endtab
+) #end tabset
+)#end main panel
+)# end bootstrap
+) #end ui
