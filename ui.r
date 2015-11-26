@@ -1,6 +1,5 @@
 #install.packages("shiny")
 
-#test
 
 library(shiny)
 library(shinyFiles)
