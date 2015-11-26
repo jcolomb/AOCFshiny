@@ -114,7 +114,7 @@ shinyServer(function(input, output, session) {
   
   output$downloadData <- downloadHandler(
          filename = function() { 
-           paste("test", ".csv", sep='') 
+           paste("concatenated", ".csv", sep='') 
          },
          content = function(file) {
            write.csv(dataInput(), file, dec= ".")

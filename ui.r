@@ -17,7 +17,7 @@ shinyUI(bootstrapPage(
     #br(),
     #helpText("Press Quit to exit the application"),
     
-    tags$h4("For feedback (problems, feature request and thank-you message) please use ",tags$a(href="https://github.com/jcolomb/Viewer-file-concatenator/issues","the github issue tracker."))
+    tags$h4("For feedback (problems, feature request and thank-you message) please use ",tags$br(), tags$a(href="https://github.com/jcolomb/Viewer-file-concatenator/issues","the github issue tracker."))
     ,actionButton("quit", "Quit app")
     , width = 3),
   
