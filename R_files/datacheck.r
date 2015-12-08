@@ -76,7 +76,8 @@ for(i in c(1:length(Filesname))){
   
   ## testing that tracking was working: checking that aver. speed is not 0
   X <- testdata[match("Avg. velocity", as.character(testdata[,Dstart+1]) ) ,Dend]
-  if (as.numeric(as.character(X))==0){print(paste0("The tracking of the animal ",filename," seems to be incorrect. Please check."))}
+  if (exists(X)){print("I could not find the avg. velocity column")
+    }else  if (as.numeric(as.character(X))==0){print(paste0("The tracking of the animal ",filename," seems to be incorrect. Please check."))}
   
 }
 
