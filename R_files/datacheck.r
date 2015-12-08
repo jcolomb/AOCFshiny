@@ -75,9 +75,9 @@ for(i in c(1:length(Filesname))){
   if ( !isTRUE(a2 == b2)) {print(paste0("In file:",filename,"animal ID in:",animalID1,"does not correspond to animal ID in:",animalID2))}
   
   ## testing that tracking was working: checking that aver. speed is not 0
-  X <- testdata[match("Avg. velocity", as.character(testdata[,Dstart+1]) ) ,Dend]
-  if (exists(X)){print("I could not find the avg. velocity column")
-    }else  if (as.numeric(as.character(X))==0){print(paste0("The tracking of the animal ",filename," seems to be incorrect. Please check."))}
+  X <- testdata[grepl("Avg. velocity", as.character(testdata[,Dstart+1]) ) ,Dend]
+  
+      if (as.numeric(as.character(X))==0){print(paste0("The tracking of the animal ",filename," seems to be incorrect. Please check."))}
   
 }
 
