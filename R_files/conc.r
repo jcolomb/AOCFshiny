@@ -27,13 +27,14 @@ alldata=c()
 for(i in c(1:length(Filesname))){
   #print(i)
   filename= paste(filepath,"/", Filesname[i], sep="")
+  print(filename)
   #set metadata size
   testdata=t(readxl::read_excel(filename, sheet = 1, col_names =FALSE))
   Dstart=match(Firstlinedata , testdata[1,])
   
   # set data size
   Dend=min(match(lastlinedata , testdata[1,]))
-  print(Dend)
+  #print(Dend)
   Ldata=Dend-(Dstart+1)
   
   #get metadata:
