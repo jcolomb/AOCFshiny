@@ -18,7 +18,7 @@ In order to install R on your computer, follow the instructions here: https://cr
 
 Open the R application and copy and paste this code:
 
-    install.packages(c("shiny","dplyr","readxl","shinyFiles"))
+    install.packages(c("shiny","dplyr","readxl","shinyFiles","chron"))
 
 Run
 ===
