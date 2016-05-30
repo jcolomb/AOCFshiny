@@ -37,6 +37,8 @@ shinyServer(function(input, output, session) {
     END=input$datatype
     NECESSARY=input$necessary_text
     NEVERTHERE=input$notpresent_text
+    
+    NEVERTHERE2=input$also_notpresent_text
     #Firstlinedata="Interval summary"
     #lastlinedata="Sum"
     
@@ -48,7 +50,7 @@ shinyServer(function(input, output, session) {
     Filesname = Filesname[END == substrRight(Filesname, 4) ]
     
     if (NEVERTHERE != ""){Filesname = Filesname[!grepl(NEVERTHERE,Filesname)]}
-    
+    if (NEVERTHERE2 != ""){Filesname = Filesname[!grepl(NEVERTHERE2,Filesname)]}
     Filesname = Filesname[grepl(NECESSARY,Filesname)]
     
     filechoosen=Filesname

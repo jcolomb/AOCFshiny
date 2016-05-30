@@ -39,9 +39,11 @@ shinyUI(bootstrapPage(
     #dataTableOutput('directorypath'),
     tags$div(
       textInput("necessary_text", label = ("text that must be in the file"), 
-              value = "animal") ,
+              value = "") ,
       textInput("notpresent_text", label = ("text that must not be in the file"), 
-              value = "")
+              value = ""),
+      textInput("also_notpresent_text", label = ("text that must not be in the file"), 
+                value = "")
     ),
     
     
